@@ -14,6 +14,11 @@ namespace Monolog\Handler;
 use Monolog\Logger;
 use Monolog\Formatter\LineFormatter;
 
+/* Define LOG_AUTHPRIV for solaris php 5.5.4 */
+if (!defined('LOG_AUTHPRIV')) {
+    define ('LOG_AUTHPRIV', 80);
+}
+
 /**
  * Logs to syslog service.
  *
@@ -50,9 +55,6 @@ class SyslogHandler extends AbstractProcessingHandler
     /**
      * List of valid log facility names.
      */
-    if (!defined('LOG_AUTHPRIV')) {
-        define ('LOG_AUTHPRIV', 80);
-    }
     private $facilities = array(
         'auth'     => LOG_AUTH,
         'authpriv' => LOG_AUTHPRIV,
