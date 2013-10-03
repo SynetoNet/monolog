@@ -50,6 +50,9 @@ class SyslogHandler extends AbstractProcessingHandler
     /**
      * List of valid log facility names.
      */
+    if (!defined('LOG_AUTHPRIV')) {
+        define ('LOG_AUTHPRIV', 80);
+    }
     private $facilities = array(
         'auth'     => LOG_AUTH,
         'authpriv' => LOG_AUTHPRIV,
