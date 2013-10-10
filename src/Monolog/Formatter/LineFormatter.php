@@ -88,7 +88,10 @@ class LineFormatter extends NormalizerFormatter
 
     protected function convertToString($data)
     {
-        if (null === $data || is_scalar($data)) {
+        if (empty($data) || is_null($data)) {
+            return '';
+        }
+        if (is_scalar($data)) {
             return (string) $data;
         }
 
