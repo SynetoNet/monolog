@@ -38,8 +38,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "1.7.x-dev",
-			"dev-syneto": "1.2.x-syneto"
+            "dev-master": "1.7.x-dev"
         }
     }
 }
