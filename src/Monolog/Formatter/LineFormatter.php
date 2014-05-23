@@ -89,10 +89,7 @@ class LineFormatter extends NormalizerFormatter
     {
         if (null === $data || is_bool($data)) {
             return var_export($data, true);
-        }
-
-    protected function convertToString($data)
-    {
+		}
         if (null === $data || is_scalar($data)) {
             return (string) $data;
         }
