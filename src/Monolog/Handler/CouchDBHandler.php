@@ -54,7 +54,7 @@ class CouchDBHandler extends AbstractProcessingHandler
                 'ignore_errors' => true,
                 'max_redirects' => 0,
                 'header'        => 'Content-type: application/json',
-            )
+            ),
         ));
 
         if (false === @file_get_contents($url, null, $context)) {
@@ -67,6 +67,6 @@ class CouchDBHandler extends AbstractProcessingHandler
      */
     protected function getDefaultFormatter()
     {
-        return new JsonFormatter();
+        return new JsonFormatter(JsonFormatter::BATCH_MODE_JSON, false);
     }
 }
